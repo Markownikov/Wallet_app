@@ -1,10 +1,10 @@
 [build]
-  command = "rm -rf node_modules && npm ci --legacy-peer-deps --install-links && npm install ajv@8.12.0 ajv-keywords@5.1.0 schema-utils@4.2.0 --legacy-peer-deps --no-save && CI=false npm run build"
+  command = "rm -rf node_modules && npm install --legacy-peer-deps && node fix-ajv.js && CI=false npm run build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "20.11.0"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NPM_FLAGS = "--legacy-peer-deps --force"
 
 # Redirects for SPA
 [[redirects]]
