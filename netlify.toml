@@ -1,0 +1,13 @@
+[build]
+  command = "CI= npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20.x"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Redirects for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
